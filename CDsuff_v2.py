@@ -25,6 +25,8 @@
 ## Version 2.
 ## Removes hard coded error_value and now uses measurement_error_mean & sigma_mem ( standard error of MEM )
 ## JM 2016/08/23
+## New default measurement_error_mean (-0.15) & sigma_mem ( 0.02, standard error of MEM )
+# JM Thu  1 Sep 2016 16:07:48 BST
 
 
 from datetime import datetime
@@ -38,23 +40,23 @@ import os
 if ( len( sys.argv ) == 1 ):
 	fname = 'cs2k.csv'
 	Yval = 1
-	measurement_error_mean = 0.01
-	sigma_mem = 0.01
+	measurement_error_mean = -0.15
+	sigma_mem = 0.02
 elif ( len( sys.argv ) == 2 ):
 	fname = sys.argv[ 1 ]
 	Yval = 1
-	measurement_error_mean = 0.01
-	sigma_mem = 0.01
+	measurement_error_mean = -0.15
+	sigma_mem = 0.02
 elif ( len( sys.argv ) == 3 ):
 	fname = sys.argv[ 1 ]
 	Yval = int( sys.argv[ 2 ] )
-	measurement_error_mean = 0.01
-	sigma_mem = 0.01
+	measurement_error_mean = -0.15
+	sigma_mem = 0.02
 elif ( len( sys.argv ) == 4 ):
 	fname = sys.argv[ 1 ]
 	Yval = int( sys.argv[ 2 ] )
 	measurement_error_mean = float( sys.argv[ 3 ] )
-	sigma_mem = 0.01
+	sigma_mem = 0.02
 elif ( len( sys.argv ) == 5 ):
 	fname = sys.argv[ 1 ]
 	Yval = int( sys.argv[ 2 ] )
@@ -63,8 +65,8 @@ elif ( len( sys.argv ) == 5 ):
 else:
 	fname = 'cs2k.csv'
 	Yval = 1
-	measurement_error_mean = 0.01
-	sigma_mem = 0.01
+	measurement_error_mean = -0.15
+	sigma_mem = 0.02
 
 if ( Yval > 4 ):
 	# Can't allow Y to be more than four. Only four Y vals allowed.
